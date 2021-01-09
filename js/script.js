@@ -46,7 +46,7 @@ function generateTitleLinks(){
   titleList.innerHTML = '';
 
   /* for each article */
-  const articles = document.querySelectorAll('.post');
+  const articles = document.querySelectorAll(optArticleSelector);
   console.log(articles);
 
 
@@ -79,7 +79,7 @@ function generateTitleLinks(){
     titleList.innerHTML = html;
     
     const links = document.querySelectorAll('.titles a');
-    console.log(links)
+    console.log(links);
 
     for(let link of links){
         link.addEventListener('click', titleClickHandler);
