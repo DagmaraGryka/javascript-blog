@@ -46,7 +46,7 @@ function generateTitleLinks(){
   titleList.innerHTML = '';
 
   /* for each article */
-  const articles = document.querySelectorAll('optArticleSelector');
+  const articles = document.querySelectorAll('.post');
   console.log(articles);
 
 
@@ -70,19 +70,21 @@ function generateTitleLinks(){
     console.log(linkHTML);
 
     /* insert link into titleList */
-    // titleList.innerHTML = titleList.innerHTML + linkHTML;
-    // element.insertAdjacentHTML(position, text);
+    //titleList.innerHTML = titleList.innerHTML + linkHTML;
+    // element.insertAdjacentHTML(position, text); ?????????????
+    // linkHTML.insertAdjacentHTML(?, HTML); ???????
     
     html = html + linkHTML;
     }
 
     titleList.innerHTML = html;
-    }
-
+    
     const links = document.querySelectorAll('.titles a');
+    console.log(links)
 
     for(let link of links){
     link.addEventListener('click', titleClickHandler);
+    }
 
 }
 
