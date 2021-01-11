@@ -181,7 +181,7 @@ function addClickListenersToTags(){
   const linkTags = document.querySelectorAll('a.active[href^="#tag-"]');
   console.log(linkTags);
   /* START LOOP: for each link */
-  for(let linkTag of linkTags);{
+  for(let linkTag of linkTags){
     /* add tagClickHandler as event listener for that link */
     linkTag.addEventListener('click', tagClickHandler);
     /* END LOOP: for each link */
