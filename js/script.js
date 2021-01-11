@@ -95,7 +95,7 @@ generateTitleLinks();
 function generateTags(){
 
   /* find all articles */
-  const articles = document.querySelectorAll(optArticleTagsSelector);
+  const articles = document.querySelectorAll('.post');
   console.log(articles);
 
   /* START LOOP: for every article: */
@@ -120,7 +120,7 @@ function generateTags(){
     for(let tag of articleTagsArray){
       console.log(tag);
 
-      /* generate HTML of the link */
+      /* generate HTML of the link */ // ???
       const linkHTML = '<li><a href="#tag-' + tag + '">' + tag + '</a></li> ';
       console.log(linkHTML);
 
