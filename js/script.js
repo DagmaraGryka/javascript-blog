@@ -41,14 +41,14 @@ function titleClickHandler(event){
 }
 
 
-function generateTitleLinks(){
+function generateTitleLinks(customSelector = ''){
 
   /* remove contents of titleList */
   const titleList = document.querySelector(optTitleListSelector);
   titleList.innerHTML = '';
 
   /* for each article */
-  const articles = document.querySelectorAll(optArticleSelector);
+  const articles = document.querySelectorAll(optArticleSelector + customSelector);
   console.log(articles);
 
 
@@ -157,32 +157,35 @@ function tagClickHandler(event){
   const activeTagLinks = document.querySelectorAll('a.active[href^="#tag-"]');
   console.log(activeTagLinks);
   /* START LOOP: for each active tag link */
-  for(activeTagLink of activeTagLinks);
+  for(activeTagLink of activeTagLinks);{
     /* remove class active */
     activeTagLink.classList.remove('active');
-  /* END LOOP: for each active tag link */
+    /* END LOOP: for each active tag link */
   }
   /* find all tag links with "href" attribute equal to the "href" constant */
   const targetTagLinks = document.querySelectorAll('a[href="' + href + '"]');
-  console.log('targetTagLinks');
+  console.log(targetTagLinks);
   /* START LOOP: for each found tag link */
-  for(let targetTagLink of targetTagLinks)
+  for(let targetTagLink of targetTagLinks){
     /* add class active */
     targetTagLink.classList.add('active');
     /* END LOOP: for each found tag link */
   }
   /* execute function "generateTitleLinks" with article selector as argument */
   generateTitleLinks('[data-tags~="' + tag + '"]');
+
 }
 
 function addClickListenersToTags(){
   /* find all links to tags */
-
+  const linkTags = document.querySelectorAll('a.active[href^="#tag-"]');
+  console.log(linkTags);
   /* START LOOP: for each link */
-
+  for(let linkTag of linkTags);{
     /* add tagClickHandler as event listener for that link */
-
-  /* END LOOP: for each link */
+    linkTag.addEventListener('click', tagClickHandler);
+    /* END LOOP: for each link */
+  }
 }
 
 addClickListenersToTags();
