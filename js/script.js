@@ -248,7 +248,7 @@ function authorClickHandler(event){
     targetAuthorLink.classList.add('active'); //add class active
   }
 
-  generateTitleLinks('[data-author~="' + author + '"]'); //execute function "generateTitleLinks" with article selector as argument
+  generateTitleLinks('[data-author="' + author + '"]'); //execute function "generateTitleLinks" with article selector as argument
 }
 
 
