@@ -117,7 +117,12 @@ function calculateTagsParams(tags){
 
 
 function calculateTagsClass(count, params){
+  const normalizedCount = count - params.min; // Zaczęliśmy od odjęcia 2 od 6
+  const normalizedMax = params.max - params.min; // Następnie zmniejszyliśmy 10 – również o 2
+  const percentage = normalizedCount / normalizedMax; // W kolejnym kroku podzieliliśmy te dwie liczby – 4 i 8
+  const classNumber = Math.floor( percentage * (optCloudClassCount - 1) + 1 ); // wreszcie, zastosowaliśmy algorytm znany z losowania liczby całkowitej
 
+  return optCloudClassPrefix + classNumber;
 }
 
 
@@ -189,8 +194,7 @@ function generateTags(){
   /*[NEW] START LOOP: for each tag in allTags */
   for(let tag in allTags){
     /*[NEW] generate code of a link and add it to allTagsHTML */
-    //allTagsHTML +=  '<li> <a class="'+ calculateTagsClass(allTags[tag], tagsParams) + '" href="#tag-' + tag + '"> ' + tag + ' </a>';
-    allTagsHTML += '<li><a class="' + calculateTagsClass(allTags[tag], tagsParams) + '" href="#tag-' + tag + '"> ' + tag + ' </a></li>';
+    allTagsHTML += '<li><a ' + calculateTagsClass(allTags[tag], tagsParams) + '" href="#tag-' + tag + '"> ' + tag + ' </a></li>';
     /*[NEW] END lOOP: for each tag in allTags */
   }
 
