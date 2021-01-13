@@ -194,7 +194,7 @@ function generateTags(){
   /*[NEW] START LOOP: for each tag in allTags */
   for(let tag in allTags){
     /*[NEW] generate code of a link and add it to allTagsHTML */
-    allTagsHTML += '<li><a ' + calculateTagsClass(allTags[tag], tagsParams) + '" href="#tag-' + tag + '"> ' + tag + ' </a></li>';
+    allTagsHTML += '<li><a class="' + calculateTagsClass(allTags[tag], tagsParams) + '" href="#tag-' + tag + '">' + tag + '</a></li>';
     /*[NEW] END lOOP: for each tag in allTags */
   }
 
