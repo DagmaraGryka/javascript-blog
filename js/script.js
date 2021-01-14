@@ -259,8 +259,12 @@ addClickListenersToTags();
 
 
 function calculateAuthorParams(authors){
+
   const params = { max: 0, min: 999999};
+
   for (let author in authors) {
+    console.log(author + ' is used ' + authors[author] + ' times');
+
     if (authors[author] > params.max) {
       params.max = authors[author];
     } else if (authors[author] < params.min) {
