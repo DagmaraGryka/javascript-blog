@@ -335,11 +335,11 @@ function generateAuthors(){
   console.log('authorParams :', authorParams );
 
   //let allAuthorsHTML = ''; // STEP 1
-  const allAuthorsData = {tags: []}; // NEW with HTML
+  const allAuthorsData = {allAuthors: []}; // NEW with HTML
 
   for(let tagAuthor in allAuthors){ // [NEW] generate code of a link and add it to allTagsHTML
     //allAuthorsHTML += '<li><a class="' + calculateTagsAuthorClass(allAuthors[tagAuthor], authorParams ) + '" href="#author-' + tagAuthor + '">' + tagAuthor + '</a></li>';
-    allAuthorsData.tags.push({ // STEP 2
+    allAuthorsData.allAuthors.push({ // STEP 2
       tagAuthor: tagAuthor,
       count: allAuthors[tagAuthor],
       className: calculateTagsAuthorClass(allAuthors[tagAuthor], authorParams)
