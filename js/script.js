@@ -88,10 +88,6 @@ function generateTitleLinks(customSelector = ''){
     console.log(linkHTML);
 
     /* insert link into titleList */
-    //titleList.innerHTML = titleList.innerHTML + linkHTML;
-    // element.insertAdjacentHTML(position, text); ?????????????
-    // linkHTML.insertAdjacentHTML(?, HTML); ???????
-
     html = html + linkHTML;
   }
 
@@ -168,7 +164,7 @@ function generateTags(){
     for(let tag of articleTagsArray){
       console.log(tag);
 
-      /* generate HTML of the link */ // ???
+      /* generate HTML of the link */
       //const linkHTML = '<li><a href="#tag-' + tag + '">' + tag + '</a></li> ';
       const linkHTMLData = {id: tag, title: tag};
       const linkHTML = templates.tagLink(linkHTMLData);
